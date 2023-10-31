@@ -1,14 +1,14 @@
 import { defineConfig } from "@wagmi/cli"
 import { react } from "@wagmi/cli/plugins"
 
-import { starterABI } from "./abis/starter-abi"
+import { PolygonZkEVMBridge } from "./abis/PolygonZkEVMBridge"
 
 export default defineConfig({
-  out: "./integrations/starter/generated/starter-wagmi.ts",
+  out: "./integrations/starter/generated/polygonZkEVMFBridge-wagmi.ts",
   contracts: [
     {
-      name: "starter",
-      abi: starterABI,
+      name: "polygonZkEVMBridge",
+      abi: PolygonZkEVMBridge,
     },
   ],
   plugins: [react()],

@@ -8,6 +8,8 @@ import {
   mainnet,
   polygon,
   polygonMumbai,
+  polygonZkEvm,
+  polygonZkEvmTestnet,
 } from "wagmi/chains"
 import { alchemyProvider } from "wagmi/providers/alchemy"
 import { infuraProvider } from "wagmi/providers/infura"
@@ -18,9 +20,9 @@ const goerli = {
   iconUrl: "/icons/NetworkEthereumTest.svg",
 }
 
-export const ETH_CHAINS_TEST = [goerli, polygonMumbai]
+export const ETH_CHAINS_TEST = [goerli, polygonMumbai, polygonZkEvmTestnet]
 
-export const ETH_CHAINS_PROD = [mainnet, polygon]
+export const ETH_CHAINS_PROD = [mainnet, polygon, polygonZkEvm]
 export const ETH_CHAINS_DEV =
   env.NEXT_PUBLIC_PROD_NETWORKS_DEV === "true"
     ? [...ETH_CHAINS_PROD, ...ETH_CHAINS_TEST]

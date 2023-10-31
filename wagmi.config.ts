@@ -1,13 +1,14 @@
 import { defineConfig } from "@wagmi/cli"
 import { react } from "@wagmi/cli/plugins"
-import { erc20ABI } from "wagmi"
+
+import { PolygonZkEVMBridge } from "./integrations/starter/abis/PolygonZkEVMBridge"
 
 export default defineConfig({
-  out: "lib/generated/blockchain.ts",
+  out: "./integrations/starter/generated/polygonZkEVMFBridge-wagmi.ts",
   contracts: [
     {
-      name: "erc20",
-      abi: erc20ABI,
+      name: "polygonZkEVMBridge",
+      abi: PolygonZkEVMBridge,
     },
   ],
   plugins: [react()],

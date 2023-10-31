@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
-import { FaDiscord, FaGithub } from "react-icons/fa"
+import { Icon } from "@radix-ui/react-select"
+import { FaDiscord, FaEnvelopeOpenText, FaGithub } from "react-icons/fa"
 import { LuBook } from "react-icons/lu"
 
 import { siteConfig } from "@/config/site"
@@ -19,14 +20,10 @@ export default function HomePage() {
   return (
     <div className="container relative mt-20 px-0">
       <PageHeader className="pb-8">
-        <Image
-          src="/logo-gradient.png"
-          alt="TurboETH Logo"
-          width={80}
-          height={80}
-          className="h-20 w-20 rounded-2xl"
-        />
-        <PageHeaderHeading>Build Web3 in Turbo&nbsp;Mode</PageHeaderHeading>
+        <FaEnvelopeOpenText size={96} color="white" />
+        <PageHeaderHeading>
+          Claim your, messages &nbsp;Across Chains
+        </PageHeaderHeading>
         <PageHeaderDescription>{siteConfig.description}</PageHeaderDescription>
         <PageHeaderCTA>
           <Link
@@ -61,14 +58,9 @@ export default function HomePage() {
           </Link>
         </PageHeaderCTA>
         <PageHeaderCTA>
-          <CopyButton value="pnpm create turbo-eth@latest">
-            <span className="text-xs sm:text-base">
-              pnpm create turbo-eth@latest
-            </span>
-          </CopyButton>
+          Conect with your wallet and continue in Your dashboard...
         </PageHeaderCTA>
       </PageHeader>
-      <ExampleDemos />
     </div>
   )
 }

@@ -51,10 +51,16 @@ export const ARBITRUM_NETWORK_NAME_API_URL_MAP = {
 // 137: Mainnet
 // 80001: Mumbai
 export const POLYGON_MAINNET_API_URL = "https://api.polygonscan.com"
+export const POLYGON_ZKEMV_API_URL = "https://api-zkemv.polygonscan.com"
 export const POLYGON_TESTNET_API_URL = "https://api-testnet.polygonscan.com"
+export const POLYGON_ZKEMV_TESTNET_API_URL =
+  "https://api-testnet-zkevm.polygonscan.com"
+
 export const POLYGON_NETWORK_NAME_API_URL_MAP = {
   mainnet: POLYGON_MAINNET_API_URL,
+  zkemvmainet: POLYGON_ZKEMV_API_URL,
   mumbai: POLYGON_TESTNET_API_URL,
+  zkemvtestnet: POLYGON_ZKEMV_TESTNET_API_URL,
 }
 
 export const CHAIN_ID_API_URL_MAP: ChainIdToApi = {
@@ -65,6 +71,7 @@ export const CHAIN_ID_API_URL_MAP: ChainIdToApi = {
   42: ETHEREUM_KOVAN_API_URL,
   137: POLYGON_MAINNET_API_URL,
   80001: POLYGON_MAINNET_API_URL,
+  1442: POLYGON_ZKEMV_TESTNET_API_URL,
   10: OPTIMISM_MAINNET_API_URL,
   420: OPTIMISM_GOERLI_API_URL,
   42161: ARBITRUM_MAINNET_API_URL,
@@ -86,6 +93,7 @@ export const CHAIN_ID_API_KEY_MAP: ChainIdToApi = {
   42: ETHERSCAN_API_KEY,
   137: ETHERSCAN_API_KEY_POLYGON,
   80001: ETHERSCAN_API_KEY_POLYGON,
+  1442: ETHERSCAN_API_KEY_POLYGON,
   10: ETHERSCAN_API_KEY_OPTIMISM,
   420: ETHERSCAN_API_KEY_OPTIMISM,
   42161: ETHERSCAN_API_KEY_ARBITRUM,
@@ -100,6 +108,7 @@ export const CHAIN_ID_SERVICE_MAP = {
   42: "etherscan",
   137: "polygonscan",
   80001: "polygonscan",
+  1442: "polygonscan",
   10: "etherscan",
   420: "etherscan",
   42161: "arbiscan",

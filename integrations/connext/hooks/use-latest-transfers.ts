@@ -28,7 +28,7 @@ export const useLatestTransfers = (isMainnet: boolean) => {
     ["latestTransfers", isMainnet, address],
     {
       queryFn: fetchTransfers,
-      refetchInterval: 10000, // Refetch data every 10 seconds
+      refetchInterval: 10000, // Refetch data every 100 seconds
     }
   )
 

@@ -18,17 +18,16 @@ interface SiteConfig {
 export const SITE_CANONICAL = "https://turboeth.xyz"
 
 export const siteConfig: SiteConfig = {
-  name: "TurboETH",
-  title: "TurboETH - Web3 App Template",
-  emoji: "⚡",
-  description:
-    "Start building full-stack Web3 applications in minutes with TurboETH.",
+  name: "Claim Me",
+  title: "Claim Messages from the LxLy Bridge on PolygonZKEMV",
+  emoji: "📨",
+  description: "Claim Messages from the LxLy Bridge on PolygonZKEMV",
   localeDefault: "en",
   links: {
-    docs: "https://docs.turboeth.xyz/overview",
-    discord: "https://discord.gg/U4jy7Xfh76",
-    twitter: "https://twitter.com/district_labs",
-    github: "https://github.com/turbo-eth/template-web3-app",
+    docs: "https://github.com/DavidGutierrez94/claim-msg",
+    discord: "https://discord.gg/8xHQ7aqdRE",
+    twitter: "https://twitter.com/_deividcrypto",
+    github: "https://github.com/DavidGutierrez94/claim-msg",
   },
 }
 

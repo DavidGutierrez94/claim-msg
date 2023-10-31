@@ -3,6 +3,8 @@
 import { motion } from "framer-motion"
 
 import { FADE_DOWN_ANIMATION_VARIANTS } from "@/config/design"
+import useMessages from "@/components/blockchain/getMessages"
+import MessageCardList from "@/components/blockchain/message-card"
 import { WalletAddress } from "@/components/blockchain/wallet-address"
 import { WalletBalance } from "@/components/blockchain/wallet-balance"
 import { WalletEnsName } from "@/components/blockchain/wallet-ens-name"
@@ -10,6 +12,9 @@ import { IsWalletConnected } from "@/components/shared/is-wallet-connected"
 import { IsWalletDisconnected } from "@/components/shared/is-wallet-disconnected"
 
 export default function PageDashboard() {
+  const messages = useMessages()
+  console.log(messages)
+
   return (
     <motion.div
       animate="show"
@@ -35,6 +40,13 @@ export default function PageDashboard() {
                 </span>
               </div>
             </span>
+            <div className="mt-4 flex flex-col items-center ">
+              <h1 className=" bg-gradient-to-br from-indigo-600 to-purple-700 bg-clip-text p-2 text-4xl text-transparent dark:from-indigo-100 dark:to-purple-200">
+                Claimable Messages:
+              </h1>
+
+              <MessageCardList />
+            </div>
           </div>
         </div>
       </IsWalletConnected>
