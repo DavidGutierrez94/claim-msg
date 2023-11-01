@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import error from "next/error"
 import { isError } from "@tanstack/react-query"
 import { useContractWrite, usePrepareContractWrite } from "wagmi"
@@ -102,18 +102,22 @@ const Card: React.FC<CardProps> = ({ deposit }) => {
         <button
           className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
           onClick={handleClaimClick}
-          disabled={isLoading}
+          disabled={isLoading || isSuccess}
         >
-          Claim
+          {isSuccess && "Claimed!"} {isLoading && "Claiming..."}{" "}
+          {!isLoading && !isSuccess && "Claim"}
         </button>
       )}
       {error && <div className="text-red-500">Error: {error.message}</div>}
     </div>
   )
 }
-
-const MessageCardList: React.FC = () => {
-  const messages = useMessages()
+type Props = {
+  contractAddress: string
+}
+const MessageCardList = (props: Props) => {
+  const currentContractAddress = props.contractAddress
+  const messages = useMessages(currentContractAddress)
   const [deposits, setDeposits] = useState<Deposit[]>([])
   const [loading, setLoading] = useState<boolean>(true)
 

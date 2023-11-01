@@ -1,5 +1,6 @@
 "use client"
 
+import { use, useContext, useEffect, useState } from "react"
 import { motion } from "framer-motion"
 
 import { FADE_DOWN_ANIMATION_VARIANTS } from "@/config/design"
@@ -12,8 +13,7 @@ import { IsWalletConnected } from "@/components/shared/is-wallet-connected"
 import { IsWalletDisconnected } from "@/components/shared/is-wallet-disconnected"
 
 export default function PageDashboard() {
-  const messages = useMessages()
-  console.log(messages)
+  const [contractAddress, setContractAddress] = useState<string>("")
 
   return (
     <motion.div
@@ -41,11 +41,18 @@ export default function PageDashboard() {
               </div>
             </span>
             <div className="mt-4 flex flex-col items-center ">
+              <form>
+                <input
+                  className="w-96 rounded-md border p-4"
+                  placeholder="Recieving PolygonZkEMV Contract Address..."
+                  onChange={(e) => setContractAddress(e.target.value)}
+                />
+              </form>
               <h1 className=" bg-gradient-to-br from-indigo-600 to-purple-700 bg-clip-text p-2 text-4xl text-transparent dark:from-indigo-100 dark:to-purple-200">
                 Claimable Messages:
               </h1>
 
-              <MessageCardList />
+              <MessageCardList contractAddress={contractAddress} />
             </div>
           </div>
         </div>
